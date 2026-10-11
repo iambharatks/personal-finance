@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* UI tokens are RGB triplets (Tailwind adds the alpha); chart tokens are plain colours.
+   The chart set is checked for colour-blind safety against both surfaces - re-run the
+   palette validator before changing any of them. */
+:root {
+  --page: 248 250 252;
+  --surface: 255 255 255;
+  --ink: 15 23 42;
+  --ink-2: 71 85 105;
+  --muted: 100 116 139;
+  --line: 226 232 240;
+
+  --c-income: #1baf7a;
+  --c-spending: #eb6834;
+  --c-investing: #2a78d6;
+  --c-tax: #eda100;
+  --c-balance: #6250d6;
+  --c-grid: #e2e8f0;
+  --c-axis: #cbd5e1;
+}
+
+.dark {
+  color-scheme: dark;
+  --page: 15 23 42;
+  --surface: 30 41 59;
+  --ink: 241 245 249;
+  --ink-2: 203 213 225;
+  --muted: 148 163 184;
+  --line: 51 65 85;
+
+  --c-income: #199e70;
+  --c-spending: #d95926;
+  --c-investing: #3987e5;
+  --c-tax: #c98500;
+  --c-balance: #9085e9;
+  --c-grid: #334155;
+  --c-axis: #475569;
+}
+
+body {
+  @apply bg-page text-ink antialiased;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@layer components {
+  .field {
+    @apply h-9 rounded-md border border-line bg-surface px-2.5 text-sm text-ink outline-none
+      focus:border-sky-500 focus:ring-1 focus:ring-sky-500;
+  }
+  .btn {
+    @apply inline-flex h-9 items-center justify-center rounded-md border border-line bg-surface
+      px-3 text-sm font-medium text-ink hover:bg-page disabled:opacity-50;
+  }
+}

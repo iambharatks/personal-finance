@@ -1,0 +1,27 @@
+# Personal data: bank history, statement samples, backups, secrets, the spec.
+# Nothing in here may ever be committed.
+private/
+
+# Secrets and local databases, wherever they end up
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Tooling
+.vercel/
+.vscode/
